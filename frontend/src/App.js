@@ -3,7 +3,7 @@ import './App.css';
 import TaskColumn from './components/TaskColumn';
 import TaskModal from './components/TaskModal';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+const API_URL = process.env.REACT_APP_API_URL || 'http://3.69.26.177/:5000';
 const STATUSES = ['todo', 'in-progress', 'done'];
 
 function App() {

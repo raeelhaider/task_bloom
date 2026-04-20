@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"
+    environment:
+      - REACT_APP_API_URL=http://3.69.26.177:5000
+    depends_on:
+      - backend
+    restart: always
+    networks: 
+      - capstone
+    
+
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=production
+    restart: always
+    networks:
+      - capstone
+
+networks:
+  capstone:
+    driver: bridge
